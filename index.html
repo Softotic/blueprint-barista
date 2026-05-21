@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blueprint Baristas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Blueprint Baristas home">
+      <img src="assets/logo-wobg.png" alt="" width="80" />
+      <!-- <span class="brand-mark" aria-hidden="true"></span> -->
+      <span>
+        <strong>Blueprint</strong>
+        <em>Baristas</em>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="order-button" href="#menu">Order Online</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Tooting Bec, London</p>
+        <h1>Coffee<br>by Design</h1>
+        <div class="rule"></div>
+        <p class="hero-text">Specialty coffee, fresh pastries and warm hospitality in the heart of Tooting.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#visit">Visit the Cafe</a>
+          <a class="button button-secondary" href="#menu">View the Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-strip" aria-label="Blueprint highlights">
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M13 17h22v10a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9V17Z"/><path d="M35 20h3a4 4 0 0 1 0 8h-3"/><path d="M10 39h28"/></svg>
+        </div>
+        <div>
+          <h2>Specialty Coffee</h2>
+          <p>Thoughtfully sourced beans, expertly roasted and brewed.</p>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M11 31c3-10 10-16 19-18 3 4 5 9 5 15"/><path d="M8 31h32c-2 5-7 8-16 8s-14-3-16-8Z"/><path d="M18 30c2-5 5-9 10-13"/></svg>
+        </div>
+        <div>
+          <h2>Fresh Pastries</h2>
+          <p>Baked daily in-house with quality ingredients.</p>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M15 24v-5a6 6 0 0 1 6-6h6a6 6 0 0 1 6 6v5"/><path d="M12 23h24a4 4 0 0 1 4 4v9H8v-9a4 4 0 0 1 4-4Z"/><path d="M13 36v4M35 36v4"/></svg>
+        </div>
+        <div>
+          <h2>Cozy Space</h2>
+          <p>A welcoming space to relax, work and connect.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="about" class="story">
+      <div class="story-image story-image-left"></div>
+      <div class="story-copy">
+        <p class="eyebrow">Our Story</p>
+        <h2>Built on Craft.<br>Powered by Community.</h2>
+        <p>Blueprint Baristas was created to bring exceptional coffee and genuine hospitality to our neighbourhood.</p>
+        <p>We believe in quality without compromise, from the beans we source to the pastries we bake and the relationships we build.</p>
+        <a class="button button-primary" href="#about">Learn More About Us</a>
+      </div>
+      <div class="story-image story-image-right"></div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <p class="eyebrow centered">Our Menu</p>
+      <h2>Made with Care. Served with Love.</h2>
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="assets/coffe_cup.png" alt="Flat white coffee with latte art" />
+          <div>
+            <h3>Flat White</h3>
+            <p>Smooth, balanced and beautifully crafted.</p>
+            <strong>£3.20</strong>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img class="crop-pastry" src="assets/milkshake_inside_view.png" alt="Fresh golden pastry" />
+          <div>
+            <h3>Butter Croissant</h3>
+            <p>Flaky, golden and baked fresh daily.</p>
+            <strong>£2.80</strong>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img class="crop-latte" src="assets/milkshake_inside_view.png" alt="Layered iced latte" />
+          <div>
+            <h3>Iced Latte</h3>
+            <p>Bold espresso with milk over ice.</p>
+            <strong>£3.60</strong>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img class="crop-swirl" src="assets/milkshake_inside_view.png" alt="Cinnamon pastry swirl" />
+          <div>
+            <h3>Cinnamon Swirl</h3>
+            <p>Warm spices and sweet indulgence.</p>
+            <strong>£2.90</strong>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="assets/coffe_cup.png" alt="Cappuccino with foam art" />
+          <div>
+            <h3>Cappuccino</h3>
+            <p>Classic, rich and perfectly foamed.</p>
+            <strong>£3.20</strong>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img class="crop-muffin" src="assets/milkshake_inside_view.png" alt="Blueberry muffin" />
+          <div>
+            <h3>Blueberry Muffin</h3>
+            <p>Moist, fruity and full of flavour.</p>
+            <strong>£2.70</strong>
+          </div>
+        </article>
+      </div>
+      <a class="menu-link" href="#menu">View Full Menu</a>
+    </section>
+
+    <section id="gallery" class="gallery-band">
+      <div class="gallery-intro">
+        <p class="eyebrow">Experience Blueprint</p>
+        <h2>More Than<br>Just Coffee</h2>
+        <p>Moments shared. Stories told. This is where every day begins.</p>
+        <a class="button button-ghost" href="#gallery">View Gallery</a>
+      </div>
+      <div class="gallery-rail" aria-label="Gallery photos">
+        <img src="assets/milkshake_inside_view.png" alt="Blueprint pastry counter" />
+        <img src="assets/bakery_full_view_outside.png" alt="Blueprint cafe exterior with guests seated outside" />
+        <img src="assets/coffe_cup.png" alt="Cup of coffee on a wooden table" />
+        <img src="assets/entrance_gate_outside.png" alt="Blueprint cafe entrance" />
+        <img src="assets/bakery_full_view_outside.png" alt="Blueprint storefront corner" />
+      </div>
+    </section>
+
+    <section id="visit" class="visit-section">
+      <div class="visit-copy">
+        <p class="eyebrow">Visit Us</p>
+        <h2>We’d Love to<br>Welcome You</h2>
+        <p>Come in for a coffee, stay for a while. We’re here every day, rain or shine.</p>
+      </div>
+      <address class="visit-details">
+        <p><span aria-hidden="true">⌖</span>60 Tooting Bec Road<br>London, SW17 8BQ</p>
+        <p><span aria-hidden="true">◷</span>Mon – Fri&nbsp;&nbsp; 7:00am – 4:30pm<br>Sat – Sun&nbsp;&nbsp; 8:00am – 4:30pm</p>
+        <p><span aria-hidden="true">☏</span>020 8767 1234</p>
+        <p><span aria-hidden="true">✉</span>hello@blueprintbaristas.co.uk</p>
+      </address>
+      <div class="map-card" aria-label="Map showing Blueprint Baristas location">
+        <div class="map-pin">
+          <img src="assets/logo.png" alt="" />
+        </div>
+      </div>
+      <aside class="walkins">
+        <h3>Walk-ins<br>Welcome</h3>
+        <div class="rule"></div>
+        <p>Great coffee is always brewing.</p>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 19h22v9a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8v-9Z"/><path d="M35 21h3a4 4 0 0 1 0 8h-3"/><path d="M12 39h25"/></svg>
+      </aside>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <a class="brand brand-inverted" href="#home" aria-label="Blueprint Baristas home">
+      <!-- <span class="brand-mark" aria-hidden="true"></span> -->
+      <img src="assets/logo-wobg.png" alt="" width="80" style="mix-blend-mode: screen;" />
+
+      <span>
+        <strong>Blueprint</strong>
+        <em>Baristas</em>
+      </span>
+    </a>
+    <p>© 2026 Blueprint Baristas. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Sitemap</a>
+    </nav>
+  </footer>
+</body>
+</html>
