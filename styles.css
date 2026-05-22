@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 section[id],
@@ -32,6 +33,7 @@ body {
   font-family: "Inter", Arial, sans-serif;
   font-size: 15px;
   line-height: 1.45;
+  overflow-x: hidden;
 }
 
 img {
@@ -301,10 +303,15 @@ a {
   line-height: 1.1;
 }
 
+.feature-card > div {
+  min-width: 0;
+}
+
 .feature-card p {
   max-width: 230px;
   margin: 0;
   color: #373d40;
+  overflow-wrap: break-word;
 }
 
 .story {
@@ -809,13 +816,177 @@ a {
   }
 }
 
+@media (max-width: 1024px) {
+  section[id],
+  footer[id] {
+    scroll-margin-top: 132px;
+  }
+
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 14px 5vw 12px;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand img {
+    width: 64px;
+    height: auto;
+  }
+
+  .brand strong {
+    font-size: 21px;
+    letter-spacing: 6px;
+  }
+
+  .brand em {
+    font-size: 12px;
+    letter-spacing: 6px;
+  }
+
+  .main-nav {
+    gap: 28px;
+    justify-content: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero {
+    min-height: 720px;
+    background:
+      linear-gradient(90deg, rgba(251, 250, 244, 1) 0%, rgba(251, 250, 244, 0.96) 34%, rgba(251, 250, 244, 0.58) 58%, rgba(251, 250, 244, 0.05) 78%),
+      url("assets/bakery_full_view_outside.png") right 35% center / auto 100% no-repeat;
+  }
+
+  .hero-copy {
+    width: 55vw;
+    min-width: 0;
+    padding-left: 5vw;
+  }
+
+  .hero h1 {
+    font-size: clamp(68px, 10vw, 104px);
+  }
+
+  .feature-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 18px 5vw;
+  }
+
+  .feature-card,
+  .feature-card:first-child {
+    grid-template-columns: 54px 1fr;
+    gap: 14px;
+    padding: 0 14px;
+  }
+
+  .feature-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .feature-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .story {
+    grid-template-columns: 43% 57%;
+    min-height: auto;
+  }
+
+  .story-image {
+    min-height: 430px;
+  }
+
+  .story-copy {
+    min-height: 430px;
+    padding: 44px 5vw;
+  }
+
+  .story-image-right {
+    grid-column: 1 / -1;
+    min-height: 260px;
+    background-position: center 44%;
+  }
+
+  .menu-section {
+    min-height: auto;
+    padding-top: 46px;
+    padding-bottom: 48px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery-band {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .gallery-intro {
+    min-height: auto;
+    max-width: 620px;
+  }
+
+  .gallery-intro p:not(.eyebrow) {
+    width: auto;
+    max-width: 360px;
+  }
+
+  .gallery-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery-rail img {
+    height: 190px;
+  }
+
+  .visit-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: auto;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .map-card,
+  .walkins {
+    min-height: 210px;
+  }
+}
+
 @media (max-width: 760px) {
+  section[id],
+  footer[id] {
+    scroll-margin-top: 155px;
+  }
+
   body {
     font-size: 14px;
   }
 
   .site-header {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 22px 14px;
+  }
+
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .brand img {
+    width: 58px;
   }
 
   .brand strong {
@@ -828,9 +999,16 @@ a {
   }
 
   .main-nav {
-    overflow-x: auto;
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    overflow-x: visible;
     justify-content: flex-start;
-    padding-bottom: 5px;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding: 0 0 5px;
+    white-space: normal;
+    font-size: 12px;
   }
 
   .main-nav a {
@@ -844,53 +1022,105 @@ a {
 
   .order-button {
     grid-column: 1;
+    grid-row: 3;
     justify-self: start;
+    min-height: 40px;
   }
 
   .hero {
-    min-height: 680px;
+    min-height: auto;
     align-items: flex-start;
-    padding-top: 330px;
+    padding-top: clamp(310px, 82vw, 430px);
+    padding-bottom: 42px;
     background:
-      linear-gradient(180deg, rgba(251,250,244,0) 0%, rgba(251,250,244,0.24) 33%, rgba(251,250,244,1) 51%),
-      url("assets/bakery_full_view_outside.png") center top / 100% auto no-repeat;
+      linear-gradient(180deg, rgba(251,250,244,0) 0%, rgba(251,250,244,0.2) 35%, rgba(251,250,244,0.98) 55%, #fbfaf4 100%),
+      url("assets/bakery_full_view_outside.png") center top / min(120vw, 520px) auto no-repeat;
   }
 
   .hero-copy {
     width: 100%;
-    padding: 0 6vw 34px;
+    min-width: 0;
+    max-width: 100vw;
+    padding: 0 22px;
   }
 
   .hero h1 {
-    font-size: clamp(62px, 18vw, 88px);
+    font-size: clamp(58px, 17vw, 82px);
+  }
+
+  .hero-text {
+    width: min(100%, 330px);
+    max-width: calc(100vw - 44px);
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .button {
+    min-width: 0;
+    min-height: 43px;
+    padding: 0 20px;
   }
 
   .feature-strip {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 0;
+    padding: 8px 22px;
   }
 
   .feature-card,
   .feature-card:first-child {
-    padding: 0;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px 0;
     border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .feature-card:last-child {
+    border-bottom: 0;
+  }
+
+  .feature-card p {
+    max-width: none;
   }
 
   .story {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .story-image-left,
   .story-image-right {
-    min-height: 250px;
+    min-height: 260px;
   }
 
   .story-copy {
-    padding: 36px 6vw;
+    min-height: auto;
+    padding: 38px 22px;
+  }
+
+  .story-copy h2,
+  .menu-section h2,
+  .visit-copy h2 {
+    font-size: clamp(34px, 11vw, 46px);
+  }
+
+  .story-copy .button {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .menu-section {
+    min-height: auto;
+    padding: 38px 22px 42px;
   }
 
   .menu-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .menu-card img {
@@ -899,6 +1129,8 @@ a {
 
   .gallery-band {
     grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 38px 22px;
   }
 
   .gallery-intro {
@@ -915,13 +1147,128 @@ a {
 
   .visit-section {
     grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 22px;
+    padding: 38px 22px;
   }
 
   .visit-details {
     padding-left: 38px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+  }
+
+  .map-card,
+  .walkins {
+    min-height: 190px;
+  }
+
+  .walkins h3 {
+    font-size: 32px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .footer .brand img {
+    width: 58px;
+  }
+
+  .footer .brand strong {
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+
+  .footer .brand em {
+    letter-spacing: 5px;
   }
 
   .footer nav {
     flex-wrap: wrap;
+    gap: 16px 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 52px;
+  }
+
+  .brand strong {
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+
+  .brand em {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .hero {
+    padding-top: clamp(265px, 78vw, 350px);
+    background:
+      linear-gradient(180deg, rgba(251,250,244,0) 0%, rgba(251,250,244,0.18) 33%, rgba(251,250,244,0.98) 57%, #fbfaf4 100%),
+      url("assets/bakery_full_view_outside.png") center top / 118vw auto no-repeat;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 17vw, 70px);
+  }
+
+  .hero-text {
+    width: min(100%, 305px);
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 260px;
+  }
+
+  .feature-card {
+    grid-template-columns: 50px minmax(0, 1fr);
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .story-image-left,
+  .story-image-right {
+    min-height: 230px;
+  }
+
+  .menu-card img {
+    height: 190px;
+  }
+
+  .gallery-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-rail img {
+    height: 210px;
+  }
+
+  .walkins {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .walkins p {
+    width: auto;
   }
 }
